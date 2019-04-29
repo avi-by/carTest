@@ -1,21 +1,21 @@
-CREATE TABLE coustumer
+CREATE TABLE customer
 (
-  id INT NOT NULL,
+  customerId INT NOT NULL,
   Subscription_Type INT NOT NULL,
   registration_date INT NOT NULL,
   phone_number INT,
   email INT NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (customerId)
 );
 
 CREATE TABLE order
 (
-  id INT NOT NULL,
+  orderId INT NOT NULL,
   date INT NOT NULL,
   discount INT,
-  id INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (id) REFERENCES coustumer(id)
+  customerId INT NOT NULL,
+  PRIMARY KEY (orderId),
+  FOREIGN KEY (customerId) REFERENCES customer(customerId)
 );
 
 CREATE TABLE ticket
@@ -27,8 +27,8 @@ CREATE TABLE ticket
   movieId INT NOT NULL,
   chair INT NOT NULL,
   theaterId INT NOT NULL,
-  id INT NOT NULL,
+  orderId INT NOT NULL,
   PRIMARY KEY (ticketId),
-  FOREIGN KEY (id) REFERENCES order(id),
+  FOREIGN KEY (orderId) REFERENCES order(orderId),
   UNIQUE (movieId)
 );
