@@ -1,18 +1,18 @@
 CREATE TABLE customer
 (
   customerId INT NOT NULL,
-  customer_Membership INT NOT NULL,
-  registration_date INT NOT NULL,
-  phone_number INT,
-  email INT NOT NULL,
+  customer_Membership VARCHAR(20) NOT NULL
+  customer_Registration_Date DATE NOT NULL,
+  customerPhoneNumber INT NOT NULL,
+  customerEmail VARCHAR(30) NOT NULL,
   PRIMARY KEY (customerId)
 );
 
 CREATE TABLE orders
 (
   orderId INT NOT NULL,
-  orderDate INT NOT NULL,
-  orderDiscount INT,
+  orderDate DATE NOT NULL,
+  orderDiscount FLOAT NOT NULL,
   customerId INT NOT NULL,
   PRIMARY KEY (orderId),
   FOREIGN KEY (customerId) REFERENCES customer(customerId)
@@ -21,7 +21,7 @@ CREATE TABLE orders
 CREATE TABLE movies
 (
   movieID INT NOT NULL,
-   removalDate DATE NOT NULL,
+  removalDate DATE NOT NULL,
   movieName VARCHAR(40) NOT NULL,
   genre VARCHAR(10) NOT NULL,
   rating FLOAT NOT NULL,
@@ -35,13 +35,14 @@ CREATE TABLE tickets
   ticketLine INT NOT NULL,
   ticketId INT NOT NULL,
   ticketStatus VARCHAR(10) NOT NULL,
-  movieName INT NOT NULL,
+  movieName VARCHAR(40) NOT NULL,
   ticketChair INT NOT NULL,
   ticketCost FLOAT NOT NULL,
   theaterId INT NOT NULL,
   orderId INT NOT NULL,
   movieID INT NOT NULL,
   PRIMARY KEY (ticketId),
+  FOREIGN KEY (theaterId) REFERENCES Theater(theaterID),
   FOREIGN KEY (orderId) REFERENCES orders(orderId),
   FOREIGN KEY (movieID) REFERENCES movies(movieID)
 );
