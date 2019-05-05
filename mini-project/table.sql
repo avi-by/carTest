@@ -21,11 +21,11 @@ CREATE TABLE orders
 CREATE TABLE movies
 (
   movieID INT NOT NULL,
-  removalDate INT NOT NULL,
-  movieName INT NOT NULL,
-  genre INT NOT NULL,
-  rating INT NOT NULL,
-  releaseDate INT NOT NULL,
+   removalDate DATE NOT NULL,
+  movieName VARCHAR(40) NOT NULL,
+  genre VARCHAR(10) NOT NULL,
+  rating FLOAT NOT NULL,
+  releaseDate DATE NOT NULL,
   releaseYear INT NOT NULL,
   PRIMARY KEY (movieID)
 );
@@ -34,9 +34,10 @@ CREATE TABLE tickets
 (
   ticketLine INT NOT NULL,
   ticketId INT NOT NULL,
-  ticketStatus INT NOT NULL,
+  ticketStatus VARCHAR(10) NOT NULL,
   movieName INT NOT NULL,
   ticketChair INT NOT NULL,
+  ticketCost FLOAT NOT NULL,
   theaterId INT NOT NULL,
   orderId INT NOT NULL,
   movieID INT NOT NULL,
