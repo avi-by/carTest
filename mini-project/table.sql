@@ -37,11 +37,9 @@ CREATE TABLE tickets
   ticketStatus VARCHAR(10) NOT NULL,
   ticketChair INT NOT NULL,
   ticketCost FLOAT NOT NULL,
-  theaterId INT NOT NULL,
   orderId INT NOT NULL,
   movieID INT NOT NULL,
   PRIMARY KEY (ticketId),
-  FOREIGN KEY (theaterId) REFERENCES Theater(theaterID),
   FOREIGN KEY (orderId) REFERENCES orders(orderId),
   FOREIGN KEY (movieID) REFERENCES movies(movieID)
 );
