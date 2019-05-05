@@ -35,7 +35,6 @@ CREATE TABLE tickets
   ticketLine INT NOT NULL,
   ticketId INT NOT NULL,
   ticketStatus VARCHAR(10) NOT NULL,
-  movieName VARCHAR(40) NOT NULL,
   ticketChair INT NOT NULL,
   ticketCost FLOAT NOT NULL,
   theaterId INT NOT NULL,
