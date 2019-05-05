@@ -37,6 +37,7 @@ CREATE TABLE tickets
   ticketStatus VARCHAR(10) NOT NULL,
   ticketChair INT NOT NULL,
   ticketCost FLOAT NOT NULL,
+  ticketDate DATE NOT NULL,
   orderId INT NOT NULL,
   movieID INT NOT NULL,
   PRIMARY KEY (ticketId),
