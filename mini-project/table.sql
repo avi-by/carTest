@@ -1,7 +1,7 @@
 CREATE TABLE customer
 (
   customerId INT NOT NULL,
-  customer_Membership VARCHAR(20) NOT NULL
+  customer_Membership VARCHAR(20) NOT NULL,
   customer_Registration_Date DATE NOT NULL,
   customerPhoneNumber INT NOT NULL,
   customerEmail VARCHAR(30) NOT NULL,
