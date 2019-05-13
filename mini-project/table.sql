@@ -26,7 +26,6 @@ CREATE TABLE movies
   genre VARCHAR(10) NOT NULL,
   rating FLOAT NOT NULL,
   releaseDate DATE NOT NULL,
-  releaseYear INT NOT NULL,
   PRIMARY KEY (movieID)
 );
 
@@ -34,7 +33,6 @@ CREATE TABLE tickets
 (
   ticketLine INT NOT NULL,
   ticketId INT NOT NULL,
-  ticketStatus VARCHAR(10) NOT NULL,
   ticketChair INT NOT NULL,
   ticketCost FLOAT NOT NULL,
   ticketDate DATE NOT NULL,
