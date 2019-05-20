@@ -8,7 +8,7 @@ select sum(s.sum)as sum,
        c.customerphonenumber,
        c.customeremail
                    from customer c,(select * from 
-                                      (select sum(t.ticketcost)-o.orderdiscount as sum, o.customerid,count(t.ticketid) as ticket_count
+                                      (select distinct sum(t.ticketcost)-o.orderdiscount as sum, o.customerid,count(t.ticketid) as ticket_count
                                       from tickets t, orders o 
                                       where o.orderid = t.orderid 
                                       group by t.orderid,o.orderdiscount,o.customerid) m
