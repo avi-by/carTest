@@ -1,0 +1,13 @@
+create or replace procedure insertData is
+cursor cf is
+select f.foodid as foodid,f.foodname as foodname,f.foodprice-f.fooddiscount as price
+from oehrlich.food f
+where f.foodid>8241;
+
+begin
+  for i in cf
+    loop
+      insert into benyakar.integration_food_customer 
+      values (i.foodid,i.foodname,i.price,dbms_random.value(1,1000));
+      end loop;
+      end;
